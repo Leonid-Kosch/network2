@@ -1,9 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
+import modyleStyle from './Nav.module.css';
 
 function Nav() {
     return ( 
-        <div className='nav'>
+        <div className={modyleStyle.container}>
             <Link to='/Profile'>
                 Profile
             </Link>

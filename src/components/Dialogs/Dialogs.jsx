@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import moduleStyle from './Dialogs.module.css';
 
 function Dialogs() {
     return ( 
-        <div>
+        <div className={moduleStyle.container}>
             Dialogs
         </div>
     );
