@@ -1,14 +1,19 @@
 import React from 'react';
-import moduleStyle from '../../Profile.module.css'
+import moduleStyle from '../../Profile.module.css';
+import Image from '../../../../img/Leonid.webp';
 
 function Post() {
     return (  
         <div className={moduleStyle.Posts__item}>
             <div>
-                <img></img>
-                <h4></h4>
+                <img src={Image} />
+                <h4>
+                    Leonid
+                </h4>
             </div>
-            <p></p>
+            <p>
+                Hello. This is my first post.
+            </p>
             <span>×</span>
         </div>  
     );

@@ -18,6 +18,9 @@ function Posts () {
             </div>
             <div className={moduleStyles.Posts__list}>
                 <Post />
+                <Post />
+                <Post />
+                <Post />
             </div>
         </div>
     );
