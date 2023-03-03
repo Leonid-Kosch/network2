@@ -2,9 +2,9 @@ import React from 'react';
 import moduleStyle from '../../Profile.module.css';
 import Image from '../../../../img/Leonid.webp';
 
-function Post() {
+function Post(props) {
     return (  
-        <div className={moduleStyle.Posts__item}>
+        <div className={moduleStyle.Posts__item}  id={props.id}>
             <div>
                 <img src={Image} />
                 <h4>
@@ -12,7 +12,7 @@ function Post() {
                 </h4>
             </div>
             <p>
-                Hello. This is my first post.
+                {props.text}
             </p>
             <span>×</span>
         </div>  

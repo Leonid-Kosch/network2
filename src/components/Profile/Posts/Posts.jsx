@@ -1,6 +1,7 @@
 import React from 'react';
 import moduleStyles from '../Profile.module.css';
 import Post from './Post/Post';
+import store from '../../../State/State';
 
 function Posts () {
     return (  
@@ -17,10 +18,7 @@ function Posts () {
                 </button>
             </div>
             <div className={moduleStyles.Posts__list}>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                {store.profile.posts.map(item => <Post text={item.text} key={item.id} id={item.id} />)}
             </div>
         </div>
     );

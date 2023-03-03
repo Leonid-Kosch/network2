@@ -18,6 +18,7 @@
     flex-direction: column;
     flex-grow: 1;
     overflow: hidden;
+    gap: 2em;
 }
 
 .Posts h3 {
@@ -35,6 +36,13 @@
     color: var(--lightColor);
     padding: 8px;
     margin-bottom: 0.5em;
+    transition: all 0.3s;
+}
+.Posts__managment textarea:focus{
+    border: solid 1px var(--lightColor);
+}
+.Posts__managment textarea:focus::placeholder {
+    color: var(--lightColor);
 }
 .Posts__managment textarea::-webkit-scrollbar {
     width: 6px;
@@ -50,6 +58,11 @@
     border-radius: 8px;
     background: transparent;
     color: var(--lightColor);
+    transition: all 0.3s;
+}
+.Posts__managment button:hover {
+    background-color: var(--lightColor);
+    color: black;
 }
 .Posts__item {
     border: solid 1px var(--borderColor);
@@ -64,6 +77,9 @@
 .Posts__list {
     flex-grow: 1;
     overflow-y: auto;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
 }
 .Posts__list::-webkit-scrollbar {
     width: 6px;
@@ -74,9 +90,10 @@
     border-radius: 10px;
 }
 .Posts__item img {
-    width: 100px;
-    height: 100px;
+    width: 72px;
+    height: 72px;
     border-radius: 150px;
+    border: solid 2px var(--lightColor);
 }
 .Posts__item h4{
     font-size: 1.6em;
