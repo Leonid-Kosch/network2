@@ -19,13 +19,24 @@ function Posts() {
             }
         } 
     };
+    function sendPostEnter (e) {
+        if (e.code == 'Enter' && !e.shiftKey) {
+            if (textArea) {
+                if (textArea.value != ''){
+                    addPost(textArea.value);
+                } else{
+                    alert('Fill your post');
+                }
+            } 
+        }
+    };
     return (
         <div className={moduleStyles.Posts}>
             <h3>
                 My publications
             </h3>
             <div className={moduleStyles.Posts__managment}>
-                <textarea placeholder='Type' onFocus={textAreaFocus}>
+                <textarea placeholder='Type' onFocus={textAreaFocus} onKeyDown={sendPostEnter}>
 
                 </textarea>
                 <button onClick={sendPost}>
