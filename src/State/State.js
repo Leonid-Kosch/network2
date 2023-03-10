@@ -1,3 +1,4 @@
+import { mainRender } from "../index.js";
 let store = {
     profile: {
         posts: [
@@ -8,6 +9,13 @@ let store = {
             {id:4, text:'Post5'}
         ]
     }
+};
+
+export function addPost (newPostText) {
+    let newPost = {id:0, text:newPostText};
+    store.profile.posts.unshift(newPost);
+    mainRender();
+    console.log(store.profile.posts);
 };
 
 export default store;

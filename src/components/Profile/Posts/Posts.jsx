@@ -2,18 +2,33 @@ import React from 'react';
 import moduleStyles from '../Profile.module.css';
 import Post from './Post/Post';
 import store from '../../../State/State';
+import { addPost } from '../../../State/State';
 
-function Posts () {
-    return (  
+function Posts() {
+    let textArea;
+    function textAreaFocus(e) {
+        textArea = e.target;
+        console.log(textArea)
+    };
+    function sendPost() {
+        if (textArea) {
+            if (textArea.value != ''){
+                addPost(textArea.value);
+            } else{
+                alert('Fill your post');
+            }
+        } 
+    };
+    return (
         <div className={moduleStyles.Posts}>
             <h3>
                 My publications
             </h3>
             <div className={moduleStyles.Posts__managment}>
-                <textarea placeholder='Type'>
+                <textarea placeholder='Type' onFocus={textAreaFocus}>
 
                 </textarea>
-                <button>
+                <button onClick={sendPost}>
                     Publicate
                 </button>
             </div>
