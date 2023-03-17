@@ -13,12 +13,19 @@ let store = {
 
 export function addPost (newPostText) {
     let newPost = {id:0, text:newPostText};
-    store.profile.posts.unshift(newPost);
+    store.profile.posts.unshift(newPost); 
+    postManagment();
+};
+export function deletePost(postId) {
+    store.profile.posts.splice(postId, 1);
+    postManagment();
+}
+
+function postManagment () {
     for (let i=0; i < store.profile.posts.length; i++){
         store.profile.posts[i].id = i;
     }
     mainRender();
-    console.log(store.profile.posts);
 };
 
 export default store;

@@ -14,6 +14,7 @@ function Posts() {
         if (textArea) {
             if (textArea.value != ''){
                 addPost(textArea.value);
+                textArea.value = '';
             } else{
                 alert('Fill your post');
             }
