@@ -1,3 +1,33 @@
 .container{
     grid-column: 2/3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+.ContactList {
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+}
+.ContactList a {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+.ContactList a:hover {
+    background-color: rgba(255, 255, 255, 0.148);
+}
+.ContactList img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+
+}
+.ContactList h3 {
+    color: var(--lightColor);
+}
+.chat{
+    grid-column: 2/5;
 }

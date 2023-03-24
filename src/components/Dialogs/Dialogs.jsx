@@ -1,10 +1,14 @@
 import React from 'react';
 import moduleStyle from './Dialogs.module.css';
+import ContactList from './Contact-list/Contact-list';
 
 function Dialogs() {
     return ( 
         <div className={moduleStyle.container}>
-            Dialogs
+            <ContactList />
+            <div className={moduleStyle.chat}>
+
+            </div>
         </div>
     );
 }

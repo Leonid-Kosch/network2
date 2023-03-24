@@ -1,4 +1,5 @@
 import { mainRender } from "../index.js";
+import Image from '../img/Leonid.webp'
 let store = {
     profile: {
         posts: [
@@ -7,6 +8,12 @@ let store = {
             {id:2, text:'Post3'},
             {id:3, text:'Post4'},
             {id:4, text:'Post5'}
+        ]
+    },
+    dialogs: {
+        contactList: [
+            {id:0, img:{Image}, name:'Leonid'},
+            {id:1, img:{Image}, name:'Andrey'}
         ]
     }
 };
