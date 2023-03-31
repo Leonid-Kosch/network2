@@ -30,4 +30,19 @@
 }
 .chat{
     grid-column: 2/5;
+    background-image: url(../../img/Message-bg-removebg.png);
+    background-size: 100px;
+    padding: 0px 16px;
+}
+.MessageItem {
+    width: 80%;
+    padding: 16px;
+    background-color: var(--darkColor);
+    border-radius: 10px;
+    position: relative;
+}
+.MessageItem span{
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
 }
