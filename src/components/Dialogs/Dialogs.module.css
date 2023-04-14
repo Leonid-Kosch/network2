@@ -2,6 +2,8 @@
     grid-column: 2/3;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+    height: 100%;
 
 }
 .ContactList {
@@ -17,7 +19,7 @@
     border-radius: 8px;
 }
 .ContactList a:hover {
-    background-color: rgba(255, 255, 255, 0.148);
+    background-color: var(--bgHover);
 }
 .ContactList img{
     width: 50px;
@@ -30,14 +32,23 @@
 }
 .chat{
     grid-column: 2/5;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+.chat__list{
+    height: 100%;
     background-image: url(../../img/Message-bg-removebg.png);
     background-size: 100px;
     padding: 0px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
 }
 .MessageItem {
     width: 80%;
     padding: 16px;
-    background-color: var(--darkColor);
     border-radius: 10px;
     position: relative;
 }
@@ -45,4 +56,16 @@
     position: absolute;
     right: 8px;
     bottom: 8px;
+}
+.chat__list::-webkit-scrollbar {
+    width: 6px;
+
+}
+.chat__list::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgb(194, 0, 194), rgb(0, 140, 255));
+    border-radius: 10px;
+}
+.chatManager {
+    position: absolute;
+    bottom: 0px;
 }

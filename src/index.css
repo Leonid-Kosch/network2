@@ -52,4 +52,13 @@ body{
   color: var(--lightColor);
   --mainBgComponent: rgba(13, 13, 92, 0.21);
   --borderColor: rgba(255, 255, 255, 0.61);
+  --bgHover: rgba(255, 255, 255, 0.148); 
+}
+body::-webkit-scrollbar {
+    width: 6px;
+
+}
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgb(194, 0, 194), rgb(0, 140, 255));
+    border-radius: 10px;
 }

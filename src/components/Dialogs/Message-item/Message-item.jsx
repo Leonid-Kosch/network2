@@ -1,10 +1,10 @@
 import React from 'react';
 import LocalStyle from '../Dialogs.module.css';
-function MessageItem() {
+function MessageItem(props) {
     return (
-        <div className={LocalStyle.MessageItem}>
+        <div className={LocalStyle.MessageItem + ' ' + props.from}>
             <p>
-                Hi
+                {props.content}
             </p>
             <span>
                 19:46

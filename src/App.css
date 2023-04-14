@@ -13,3 +13,11 @@
   border-radius: 10px;
   padding: 10px;
 }
+.messageItem_My {
+  align-self: flex-end;
+  background-color: rgba(27, 75, 152, 0.699);
+}
+.messageItem_Friends {
+  background-color: var(--darkColor);
+  align-self: flex-start;
+}
