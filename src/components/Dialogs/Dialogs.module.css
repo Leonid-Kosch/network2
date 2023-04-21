@@ -35,7 +35,9 @@
     position: relative;
     overflow: hidden;
     height: 100%;
+    padding-right:8px ;
 }
+
 .chat__list{
     height: 100%;
     background-image: url(../../img/Message-bg-removebg.png);
@@ -45,6 +47,14 @@
     flex-direction: column;
     gap: 14px;
     overflow-y: auto;
+
+}
+.chat__list::-webkit-scrollbar {
+    width: 6px;
+}
+.chat__list::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgb(194, 0, 194), rgb(0, 140, 255));
+    border-radius: 10px;
 }
 .MessageItem {
     width: 80%;
@@ -52,20 +62,26 @@
     border-radius: 10px;
     position: relative;
 }
-.MessageItem span{
+.chatManager{
     position: absolute;
-    right: 8px;
-    bottom: 8px;
+    bottom: 0;
+    width: calc(100% - 24px);
+    display: flex;
+    padding: 8px;
+    padding-right: 24px;
+    gap: 8px;
+    background-color: rgba(27, 75, 152, 0.699);
+    border-radius: 10px 10px 0 0;
 }
-.chat__list::-webkit-scrollbar {
-    width: 6px;
-
-}
-.chat__list::-webkit-scrollbar-thumb{
-    background: linear-gradient(rgb(194, 0, 194), rgb(0, 140, 255));
+.chatManager textarea {
     border-radius: 10px;
+    flex-grow: 1;
+    padding: 3px 6px;
+    border: white solid 1px;
+    background-color: rgba(27, 75, 152)
 }
-.chatManager {
-    position: absolute;
-    bottom: 0px;
+.chatManager button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: rgb(194, 0, 194);
 }
