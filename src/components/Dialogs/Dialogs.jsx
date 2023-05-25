@@ -3,25 +3,18 @@ import moduleStyle from './Dialogs.module.css';
 import ContactList from './Contact-list/Contact-list';
 import MessageItem from './Message-item/Message-item';
 import ChatManager from './ChatManager';
+import store from '../../State/State';
 
 function Dialogs() {
+    let messagesItems = store.dialogs.messagesList.map((item) =>
+        <MessageItem from={item.from} content={item.text} id={item.id} time={item.time}/>
+    )
     return ( 
         <div className={moduleStyle.container}>
             <ContactList />
             <div className={moduleStyle.chat}>
                 <div className={moduleStyle.chat__list}>
-                    <MessageItem from='messageItem_Friends' content="Hello"/>
-                    <MessageItem from='messageItem_My' content='Hello. How are you?'/>
-                    <MessageItem from='messageItem_Friends' content="Good"/>
-                    <MessageItem from='messageItem_Friends' content="Hello"/>
-                    <MessageItem from='messageItem_My' content='Hello. How are you?'/>
-                    <MessageItem from='messageItem_Friends' content="Good"/>
-                    <MessageItem from='messageItem_Friends' content="Hello"/>
-                    <MessageItem from='messageItem_My' content='Hello. How are you?'/>
-                    <MessageItem from='messageItem_Friends' content="Good"/>
-                    <MessageItem from='messageItem_Friends' content="Hello"/>
-                    <MessageItem from='messageItem_My' content='Hello. How are you?'/>
-                    <MessageItem from='messageItem_Friends' content="Good"/>
+                    {messagesItems}
                 </div>
                 <ChatManager />
             </div>

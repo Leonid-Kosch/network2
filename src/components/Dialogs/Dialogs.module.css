@@ -25,10 +25,12 @@
     width: 50px;
     height: 50px;
     border-radius: 100%;
+    pointer-events: none;
 
 }
 .ContactList h3 {
     color: var(--lightColor);
+    pointer-events: none;
 }
 .chat{
     grid-column: 2/5;
@@ -84,4 +86,9 @@
     padding: 8px 16px;
     border-radius: 10px;
     background-color: rgb(194, 0, 194);
+}
+.MessageItem span {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
 }

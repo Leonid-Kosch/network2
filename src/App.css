@@ -21,3 +21,9 @@
   background-color: var(--darkColor);
   align-self: flex-start;
 }
+.active {
+  background-color: rgba(27, 75, 152, 0.699);
+}
+.active:hover {
+  background-color: rgba(27, 75, 152, 0.863) !important;
+}
