@@ -1,5 +1,6 @@
-import { mainRender } from "../index.js";
+import { mainRender } from "../mainRender.js";
 import Image from '../img/Leonid.webp'
+import { UNSAFE_LocationContext, json } from "react-router-dom";
 let store = {
     profile: {
         posts: [
@@ -29,9 +30,10 @@ let store = {
             ]
         ]
     }
-    
-
 };
+if (localStorage.getItem('store') ) {
+    store = JSON.parse(localStorage.getItem('store'));
+}
 export function chatSwtich (chatId) {
     let chat = store.dialogs.messagesListAll[chatId];
     store.dialogs.messagesList = chat;
@@ -42,6 +44,7 @@ export function chatSwtich (chatId) {
         }
     };
     store.dialogs.contactList[chatId].status = 'active';
+    storeSaving();
     mainRender();
 };
 export function addPost (newPostText) {
@@ -58,6 +61,7 @@ function idManager (area) {
     for (let i=0; i < area.length; i++){
         area[i].id = i;
     }
+    storeSaving();
     mainRender();
 };
 
@@ -68,5 +72,9 @@ export function addMessagesState (newMessageText, newMessageTime) {
     idManager(store.dialogs.messagesList);
 };
 
+function storeSaving () {
+    let storeString = JSON.stringify(store);
+    localStorage.setItem('store', storeString);
+};
 
 export default store;
